@@ -1,2 +1,1 @@
-# catalog
-PlatformNOW Ctalog
+# PlatformNOW Catalog
