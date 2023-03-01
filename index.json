@@ -9,7 +9,7 @@
       "version": "v0.13.0",
       "source": "https://github.com/crossplane-contrib/provider-helm",
       "cli": true,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/provider-helm.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/helm/provider.yaml"
     },
     {
       "image": "registry.upbound.io/crossplane/provider-kubernetes",
@@ -20,7 +20,7 @@
       "version": "v0.6.0",
       "source": "https://github.com/crossplane-contrib/provider-kubernetes",
       "cli": true,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/provider-kubernetes.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/kubernetes/provider.yaml"
     },
     {
       "image": "xpkg.upbound.io/crossplane/provider-aws",
@@ -31,7 +31,7 @@
       "version": "v0.33.0",
       "source": "https://github.com/crossplane-contrib/provider-aws",
       "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/provider-aws.yaml",
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/aws/provider.yaml",
       "secret": [
         {
           "type": "textarea",
@@ -50,7 +50,7 @@
       "version": "v0.22.0",
       "source": "https://github.com/crossplane-contrib/provider-gcp",
       "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/provider-gcp.yaml",
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/gcp/provider.yaml",
       "secret": [
         {
           "type": "textarea",
