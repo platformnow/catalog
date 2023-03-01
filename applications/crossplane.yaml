@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane
+  namespace: landscape-system
+spec:
+  destination:
+    namespace: landscape-system
+    server: https://kubernetes.default.svc
+  project: crossplane
+  source:
+    chart: crossplane
+    repoURL: https://charts.crossplane.io/stable
+    targetRevision: 1.11.0
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
