@@ -69,7 +69,7 @@
       "version": "v0.0.12",
       "source": "https://github.com/platformnow/gitops-package",
       "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/gitops/gitops.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/gitops/package.yaml"
     },
     {
       "image": "ghcr.io/platformnow/core-package",
@@ -80,7 +80,7 @@
       "version": "v0.0.2",
       "source": "https://github.com/platformnow/core-package",
       "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/core/core.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/core/package.yaml"
     }
   ]
 }
