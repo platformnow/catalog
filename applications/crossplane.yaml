@@ -20,7 +20,7 @@ spec:
         value: "--enable-composition-functions"
       - name: "xfn.enabled"
         value: "true"
-      - name: "xfn.arg[0]"
+      - name: "xfn.args[0]"
         value: "--debug"
   syncPolicy:
     automated:
