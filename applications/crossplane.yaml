@@ -12,6 +12,14 @@ spec:
     chart: crossplane
     repoURL: https://charts.crossplane.io/stable
     targetRevision: 1.11.0
+  helm:
+    parameters:
+    - name: "args"
+      value: {--debug,--enable-composition-functions}
+    - name: "xfn.enabled"
+      value: true
+    - name: "xfn.arg"
+      value: {--debug}
   syncPolicy:
     automated:
       prune: true
