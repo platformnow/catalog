@@ -14,12 +14,14 @@ spec:
     targetRevision: 1.11.2
     helm:
       parameters:
-      - name: "args"
-        value: "{--debug,--enable-composition-functions}"
+      - name: "args[0]"
+        value: "--debug"
+      - name: "args[1]"
+        value: "--enable-composition-function}"
       - name: "xfn.enabled"
         value: "true"
-      - name: "xfn.arg"
-        value: "{--debug}"
+      - name: "xfn.arg[0]"
+        value: "--debug"
   syncPolicy:
     automated:
       prune: true
