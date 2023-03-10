@@ -15,11 +15,11 @@ spec:
   helm:
     parameters:
     - name: "args"
-      value: {--debug,--enable-composition-functions}
+      value: "{--debug,--enable-composition-functions}"
     - name: "xfn.enabled"
       value: true
     - name: "xfn.arg"
-      value: {--debug}
+      value: "{--debug}"
   syncPolicy:
     automated:
       prune: true
