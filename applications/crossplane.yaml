@@ -14,7 +14,7 @@ spec:
     targetRevision: 1.11.2
     helm:
       parameters:
-      - name: "xfn.tag"
+      - name: "xfn.image.tag"
         value: "v1.11.0-10.g99ce14c1"
       - name: "args[0]"
         value: "--debug"
