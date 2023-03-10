@@ -17,7 +17,7 @@ spec:
       - name: "args[0]"
         value: "--debug"
       - name: "args[1]"
-        value: "--enable-composition-function"
+        value: "--enable-composition-functions"
       - name: "xfn.enabled"
         value: "true"
       - name: "xfn.arg[0]"
