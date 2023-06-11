@@ -3,7 +3,7 @@ kind: Provider
 metadata:
   name: provider-helm
 spec:
-  package: xpkg.upbound.io/crossplane-contrib/provider-helm:v0.13.0
+  package: xpkg.upbound.io/crossplane-contrib/provider-helm:v0.15.0
   packagePullPolicy: IfNotPresent
   controllerConfigRef:
     name: provider-helm-controllerconfig
