@@ -57,7 +57,7 @@
     },
     {
       "image": "ghcr.io/platformnow/environment-package",
-      "name": "environment component",
+      "name": "package environment",
       "description": "This package is a Crossplane Package that enables deployment and management of environment resources on Kubernetes clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
