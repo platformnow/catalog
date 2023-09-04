@@ -1,9 +1,9 @@
 apiVersion: pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: project-package-configuration
+  name: component-package-configuration
 spec:
-  package: ghcr.io/platformnow/project-package:v0.0.1
+  package: ghcr.io/platformnow/component-package:v0.0.2
   packagePullPolicy: Always
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1
