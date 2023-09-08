@@ -5,6 +5,7 @@ metadata:
   description: Postgres database for landscape
 spec:
   type: database
+  owner: default/guest
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -16,6 +17,7 @@ spec:
   lifecycle: production
   dependsOn:
     - resource:default/landscape-backend
+  owner: default/guest
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -27,3 +29,4 @@ spec:
   lifecycle: production
   dependsOn:
     - component:default/landscape-backend
+  owner: default/guest
