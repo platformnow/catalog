@@ -4,4 +4,4 @@ metadata:
   name: microservices-demo
   description: Online Boutique is a cloud-native microservices demo application by google.
 spec:
-  owner: platformnow/admin
+  owner: platformnow
