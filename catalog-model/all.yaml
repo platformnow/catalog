@@ -6,3 +6,4 @@ metadata:
 spec:
   targets:
     - ./all-systems.yaml
+    - ./all-resources.yaml

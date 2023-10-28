@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: platformnow-resources
+  description: A collection of all PLatformNOW resources
+spec:
+  targets:
+    - ./resources/landscape-database-resource.yaml

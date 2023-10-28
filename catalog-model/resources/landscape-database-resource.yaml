@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: landscape-db
+  description: Postgres database for the Landscape service
+spec:
+  type: database
+  owner: platformnow
+  system: landscape
+  lifecycle: development
