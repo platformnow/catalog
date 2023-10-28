@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: platformnow-corp
+  description: A collection of all PlatformNOW Groups
+spec:
+  targets:
+    - ./platformnow/org.yaml

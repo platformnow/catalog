@@ -1,0 +1,7 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: microservices-demo
+  description: Online Boutique is a cloud-native microservices demo application by google.
+spec:
+  owner: platformnow/admin

@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: platformnow-systems
+  description: A collection of all PLatformNOW systems
+spec:
+  targets:
+    - ./systems/microservices-demo-system.yaml

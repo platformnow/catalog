@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: platformnow-all
+  description: A collection of all PLatformNOW entities, except users, groups, and templates
+spec:
+  targets:
+    - ./all-systems.yaml
