@@ -6,3 +6,4 @@ metadata:
 spec:
   targets:
     - ./systems/microservices-demo-system.yaml
+    - ./systems/landscape-system.yaml
