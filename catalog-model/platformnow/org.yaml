@@ -14,4 +14,7 @@ spec:
     displayName: PlatformNOW Organization
     email: info@platformnow.io
     picture: https://avatars.dicebear.com/api/identicon/info@example.com.svg?background=%23fff&margin=25
-  children: [infrastructure]
+  children:
+    - platformnow/admin
+    - platformnow/backend
+    - platformnow/frontend
