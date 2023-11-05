@@ -3,7 +3,7 @@ kind: Configuration
 metadata:
   name: gitops-package-configuration
 spec:
-  package: ghcr.io/platformnow/gitops-package:v0.0.16
+  package: ghcr.io/platformnow/gitops-package:v0.0.17
   packagePullPolicy: Always
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1
