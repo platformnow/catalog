@@ -11,19 +11,12 @@ spec:
   source:
     chart: crossplane
     repoURL: https://charts.crossplane.io/stable
-    targetRevision: 1.13.2
+    targetRevision: 1.14.5
     helm:
-      parameters:
-#       - name: "xfn.image.tag"
-#         value: "v1.11.0-10.g99ce14c1"
-      - name: "args[0]"
-        value: "--debug"
-      - name: "args[1]"
-        value: "--enable-composition-functions"
-      - name: "xfn.enabled"
-        value: "true"
-      - name: "xfn.args[0]"
-        value: "--debug"
+      values: |
+        args:
+          - --debug
+          - --enable-environment-configs
   syncPolicy:
     automated:
       prune: true
