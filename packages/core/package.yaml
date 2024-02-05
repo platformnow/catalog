@@ -3,7 +3,7 @@ kind: Configuration
 metadata:
   name: core-package-configuration
 spec:
-  package: ghcr.io/platformnow/core-package:v0.0.5
+  package: ghcr.io/platformnow/core-package:v0.0.6
   packagePullPolicy: Always
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1

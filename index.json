@@ -39,7 +39,7 @@
       "description": "This package is a Crossplane Package that enables deployment and management of core resources on Kubernetes clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
-      "version": "v0.0.5",
+      "version": "v0.0.6",
       "source": "https://github.com/platformnow/core-package",
       "cli": false,
       "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/core/package.yaml"
