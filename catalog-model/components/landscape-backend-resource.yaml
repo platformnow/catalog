@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: landscape-backend
+  description: landscape backend
+spec:
+  type: website
+  lifecycle: production
+  dependsOn:
+    - resource:default/landscape-backend
+  owner: default/guest

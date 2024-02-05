@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: landscape-frontend
+  description: landscape frontend
+spec:
+  type: api
+  lifecycle: production
+  dependsOn:
+    - component:default/landscape-backend
+  owner: default/guest
