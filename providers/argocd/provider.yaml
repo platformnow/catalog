@@ -1,0 +1,9 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-argocd
+spec:
+  package: xpkg.upbound.io/crossplane-contrib/provider-argocd:v0.6.0
+  packagePullPolicy: IfNotPresent
+  controllerConfigRef:
+    name: provider-github-controllerconfig
