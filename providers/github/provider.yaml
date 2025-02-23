@@ -3,7 +3,7 @@ kind: Provider
 metadata:
   name: provider-github
 spec:
-  package: xpkg.upbound.io/coopnorge/provider-github:v0.4.0
+  package: xpkg.upbound.io/coopnorge/provider-github:v0.18.0
   packagePullPolicy: IfNotPresent
   controllerConfigRef:
     name: provider-github-controllerconfig
