@@ -2,8 +2,11 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-kubernetes
+  labels:
+    app: crossplane
+    provider: kubernetes
 spec:
   package: xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.17.0
   packagePullPolicy: IfNotPresent
-  controllerConfigRef:
-    name: provider-kubernetes-controllerconfig
+  runtimeConfigRef:
+    name: provider-kubernetes-config

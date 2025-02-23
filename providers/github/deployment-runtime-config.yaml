@@ -1,0 +1,16 @@
+apiVersion: pkg.crossplane.io/v1beta1
+kind: DeploymentRuntimeConfig
+metadata:
+  name: provider-github-config
+  labels:
+    app: crossplane
+    provider: github
+spec:
+  serviceAccountName: provider-github
+  # Add resource limits and requests
+  # resources:
+  #   limits:
+  #     cpu: 500m
+  #     memory: 512Mi
+  #   requests:
+  #     cpu: 100m

@@ -2,6 +2,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: provider-github-admin-binding
+  labels:
+    app: crossplane
+    provider: github
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole

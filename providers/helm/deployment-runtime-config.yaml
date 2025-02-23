@@ -1,0 +1,16 @@
+apiVersion: pkg.crossplane.io/v1beta1
+kind: DeploymentRuntimeConfig
+metadata:
+  name: provider-helm-config
+  labels:
+    app: crossplane
+    provider: helm
+spec:
+  serviceAccountName: provider-helm
+  # Add resource limits and requests
+  # resources:
+  #   limits:
+  #     cpu: 500m
+  #     memory: 512Mi
+  #   requests:
+  #     cpu: 100m

@@ -1,0 +1,17 @@
+apiVersion: pkg.crossplane.io/v1beta1
+kind: DeploymentRuntimeConfig
+metadata:
+  name: provider-kubernetes-config
+  labels:
+    app: crossplane
+    provider: kubernetes
+spec:
+  serviceAccountName: provider-kubernetes
+  # Add resource limits and requests
+  # resources:
+  #   limits:
+  #     cpu: 500m
+  #     memory: 512Mi
+  #   requests:
+  #     cpu: 100m
+  #     memory: 256Mi

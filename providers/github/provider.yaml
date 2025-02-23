@@ -2,8 +2,11 @@ apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-github
+  labels:
+    app: crossplane
+    provider: github
 spec:
   package: xpkg.upbound.io/coopnorge/provider-github:v0.13.0
   packagePullPolicy: IfNotPresent
-  controllerConfigRef:
-    name: provider-github-controllerconfig
+  runtimeConfigRef:
+    name: provider-github-config
