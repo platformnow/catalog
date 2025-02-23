@@ -6,7 +6,7 @@
       "description": "This provider is a Crossplane Provider that enables deployment and management of Helm Releases on Kubernetes clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/helm.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.16.0",
+      "version": "v0.20.4",
       "source": "https://github.com/crossplane-contrib/provider-helm",
       "cli": true,
       "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/helm/provider.yaml"
@@ -17,7 +17,7 @@
       "description": "This provider is a Crossplane Provider that enables deployment and management of arbitrary Kubernetes objects on clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/kubernetes.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.11.4",
+      "version": "v0.17.0",
       "source": "https://github.com/crossplane-contrib/provider-kubernetes",
       "cli": true,
       "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/kubernetes/provider.yaml"
@@ -83,7 +83,7 @@
       "description": "This provider is a Crossplane Provider that enables deployment and management of Github Resources on Kubernetes clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/github.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.4.0",
+      "version": "v0.18.0",
       "source": "https://github.com/coopnorge/provider-github",
       "cli": true,
       "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/github/provider.yaml"
@@ -94,7 +94,7 @@
       "description": "This provider is a Crossplane Provider that enables deployment and management of ArgoCD Resources on Kubernetes clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/argocd.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.6.0",
+      "version": "v0.9.2",
       "source": "https://github.com/crossplane-contrib/provider-argocd",
       "cli": true,
       "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/argocd/provider.yaml"
