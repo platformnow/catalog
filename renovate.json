@@ -11,16 +11,16 @@
       "description": "Package updates from platformnow",
       "groupName": "platformnow packages",
       "automerge": true,
-      "matchPackagePatterns": [
-        "^ghcr\\.io/platformnow/"
+      "matchPackageNames": [
+        "/^ghcr\\.io/platformnow//"
       ]
     },
     {
       "description": "Provider updates",
       "groupName": "crossplane providers",
-      "matchPackagePatterns": [
-        "^xpkg\\.upbound\\.io/crossplane-contrib/",
-        "^xpkg\\.upbound\\.io/coopnorge/"
+      "matchPackageNames": [
+        "/^xpkg\\.upbound\\.io/crossplane-contrib//",
+        "/^xpkg\\.upbound\\.io/coopnorge//"
       ]
     }
   ],
