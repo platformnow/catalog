@@ -9,16 +9,6 @@
   "requireConfig": "optional",
   "packageRules": [
     {
-      "matchManagers": ["regex"],
-      "matchFiles": ["index.json"],
-      "matchStrings": [
-        "\"version\": \"(?<currentValue>.*?)\"",
-        "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\""
-      ],
-      "datasourceTemplate": "docker",
-      "extractVersionTemplate": "^v?(?<version>.*)$"
-    },
-    {
       "description": "Package updates from platformnow",
       "matchPackagePatterns": ["^ghcr.io/platformnow/"],
       "groupName": "platformnow packages",
@@ -34,8 +24,19 @@
       "groupName": "crossplane providers"
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
+      "fileMatch": ["^index\\.json$"],
+      "matchStrings": [
+        "\"version\": \"(?<currentValue>.*?)\"",
+        "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\""
+      ],
+      "datasourceTemplate": "docker",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    },
+    {
+      "customType": "regex",
       "fileMatch": ["^packages/.+/package\\.yaml$"],
       "matchStrings": [
         "package: (?<depName>.+):(?<currentValue>.+)"
@@ -44,6 +45,7 @@
       "versioningTemplate": "semver"
     },
     {
+      "customType": "regex",
       "fileMatch": ["^providers/.+/provider\\.yaml$"],
       "matchStrings": [
         "package: (?<depName>.+):(?<currentValue>.+)"
