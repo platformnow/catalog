@@ -1,116 +1,116 @@
 {
   "packages": [
     {
-      "image": "ghcr.io/platformnow/gitops-package",
+      "registry": "ghcr.io",
+      "image": "platformnow/gitops-package",
       "name": "package gitops",
       "description": "This package is a Crossplane Package that enables deployment and management of Gitops on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
       "version": "v0.0.18",
       "source": "https://github.com/platformnow/gitops-package",
-      "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/gitops/package.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/main/packages/gitops/package.yaml"
     },
     {
-      "image": "ghcr.io/platformnow/core-package",
+      "registry": "ghcr.io",
+      "image": "platformnow/core-package",
       "name": "package core",
       "description": "This package is a Crossplane Package that enables deployment and management of core resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
       "version": "v0.0.7",
       "source": "https://github.com/platformnow/core-package",
-      "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/core/package.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/main/packages/core/package.yaml"
     },
     {
-      "image": "ghcr.io/platformnow/project-package",
+      "registry": "ghcr.io",
+      "image": "platformnow/project-package",
       "name": "package project",
       "description": "This package is a Crossplane Package that enables deployment and management of project resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
       "version": "v0.0.1",
       "source": "https://github.com/platformnow/project-package",
-      "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/project/package.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/main/packages/project/package.yaml"
     },
     {
-      "image": "ghcr.io/platformnow/environment-package",
+      "registry": "ghcr.io",
+      "image": "platformnow/environment-package",
       "name": "package environment",
       "description": "This package is a Crossplane Package that enables deployment and management of environment resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
       "version": "v0.0.2",
       "source": "https://github.com/platformnow/environment-package",
-      "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/environment/package.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/main/packages/environment/package.yaml"
     },
     {
-      "image": "ghcr.io/platformnow/component-package",
+      "registry": "ghcr.io",
+      "image": "platformnow/component-package",
       "name": "package component",
       "description": "This package is a Crossplane Package that enables deployment and management of component resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
       "version": "v0.0.2",
       "source": "https://github.com/platformnow/component-package",
-      "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/component/package.yaml"
+      "package": "https://raw.githubusercontent.com/platformnow/catalog/main/packages/component/package.yaml"
     }
   ],
   "providers": [
     {
-      "image": "registry.upbound.io/crossplane/provider-helm",
+      "registry": "xpkg.upbound.io",
+      "image": "crossplane-contrib/provider-helm",
       "name": "provider helm",
       "description": "This provider is a Crossplane Provider that enables deployment and management of Helm Releases on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/helm.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/helm.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
       "version": "v0.20.0",
       "source": "https://github.com/crossplane-contrib/provider-helm",
-      "cli": true,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/helm/provider.yaml"
+      "provider": "https://raw.githubusercontent.com/platformnow/catalog/main/providers/helm/provider.yaml"
     },
     {
-      "image": "registry.upbound.io/crossplane/provider-kubernetes",
+      "registry": "xpkg.upbound.io",
+      "image": "crossplane-contrib/provider-kubernetes",
       "name": "provider kubernetes",
       "description": "This provider is a Crossplane Provider that enables deployment and management of arbitrary Kubernetes objects on clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/kubernetes.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/kubernetes.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
       "version": "v0.17.0",
       "source": "https://github.com/crossplane-contrib/provider-kubernetes",
-      "cli": true,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/kubernetes/provider.yaml"
+      "provider": "https://raw.githubusercontent.com/platformnow/catalog/main/providers/kubernetes/provider.yaml"
     },
     {
-      "image": "ghcr.io/platformnow/project-package",
+      "registry": "ghcr.io",
+      "image": "platformnow/project-package",
       "name": "package project",
       "description": "This package is a Crossplane Package that enables deployment and management of project resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/package.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "PlatformNOW Authors <info@platformnow.io>",
       "version": "v0.0.1",
       "source": "https://github.com/platformnow/project-package",
-      "cli": false,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/packages/project/package.yaml"
+      "provider": "https://raw.githubusercontent.com/platformnow/catalog/main/packages/project/package.yaml"
     },
     {
-      "image": "xpkg.upbound.io/coopnorge/provider-github",
+      "registry": "xpkg.upbound.io",
+      "image": "coopnorge/provider-github",
       "name": "provider github",
       "description": "This provider is a Crossplane Provider that enables deployment and management of Github Resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/github.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/github.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
       "version": "v0.13.0",
       "source": "https://github.com/coopnorge/provider-github",
-      "cli": true,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/github/provider.yaml"
+      "provider": "https://raw.githubusercontent.com/platformnow/catalog/main/providers/github/provider.yaml"
     },
     {
-      "image": "xpkg.upbound.io/crossplane-contrib/provider-argocd",
+      "registry": "xpkg.upbound.io",
+      "image": "crossplane-contrib/provider-argocd",
       "name": "provider argocd",
       "description": "This provider is a Crossplane Provider that enables deployment and management of ArgoCD Resources on Kubernetes clusters typically provisioned by Crossplane.",
-      "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/argocd.svg",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/argocd.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
       "version": "v0.9.2",
       "source": "https://github.com/crossplane-contrib/provider-argocd",
-      "cli": true,
-      "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/argocd/provider.yaml"
+      "provider": "https://raw.githubusercontent.com/platformnow/catalog/main/providers/argocd/provider.yaml"
     }
   ]
 }

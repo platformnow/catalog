@@ -19,7 +19,6 @@
       "description": "Provider updates",
       "groupName": "crossplane providers",
       "matchPackagePatterns": [
-        "^registry\\.upbound\\.io/crossplane/",
         "^xpkg\\.upbound\\.io/crossplane-contrib/",
         "^xpkg\\.upbound\\.io/coopnorge/"
       ]
@@ -34,13 +33,12 @@
         "^packages/.+/package\\.yaml$"
       ],
       "matchStrings": [
-        "\"image\":\\s*\"(?<depName>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
-        "\"version\":\\s*\"(?<currentValue>[^\"]+)\"[^}]*\"image\":\\s*\"(?<depName>[^\"]+)\"",
+        "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
         "package:\\s*(?<depName>[^:]+):(?<currentValue>.+)"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver",
-      "packageNameTemplate": "{{depName}}"
+      "packageNameTemplate": "{{registry}}/{{image}}"
     }
   ],
   "rangeStrategy": "pin",
