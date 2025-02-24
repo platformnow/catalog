@@ -4,8 +4,6 @@
     "config:base"
   ],
   "enabledManagers": ["regex"],
-  "onboarding": false,
-  "requireConfig": "optional",
   "packageRules": [
     {
       "description": "Package updates from platformnow",
