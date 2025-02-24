@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchFiles": ["index.json"],
+      "matchStrings": [
+        "\"version\": \"(?<currentValue>.*?)\"",
+        "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\""
+      ],
+      "datasourceTemplate": "docker",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    },
+    {
+      "description": "Package updates from platformnow",
+      "matchPackagePatterns": ["^ghcr.io/platformnow/"],
+      "groupName": "platformnow packages",
+      "automerge": true
+    },
+    {
+      "description": "Provider updates",
+      "matchPackagePatterns": [
+        "^registry.upbound.io/crossplane/",
+        "^xpkg.upbound.io/crossplane-contrib/",
+        "^xpkg.upbound.io/coopnorge/"
+      ],
+      "groupName": "crossplane providers"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^packages/.+/package\\.yaml$"],
+      "matchStrings": [
+        "package: (?<depName>.+):(?<currentValue>.+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["^providers/.+/provider\\.yaml$"],
+      "matchStrings": [
+        "package: (?<depName>.+):(?<currentValue>.+)"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "semver"
+    }
+  ]
+} 
