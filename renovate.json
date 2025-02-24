@@ -34,11 +34,12 @@
       ],
       "matchStrings": [
         "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
-        "package:\\s*(?<depName>[^:]+):(?<currentValue>.+)"
+        "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver",
-      "packageNameTemplate": "{{registry}}/{{image}}"
+      "packageNameTemplate": "{{registry}}/{{image}}",
+      "depNameTemplate": "{{registry}}/{{image}}"
     }
   ],
   "rangeStrategy": "pin",
