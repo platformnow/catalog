@@ -6,7 +6,9 @@ metadata:
     app: crossplane
     provider: github
 spec:
-  serviceAccountName: provider-github
+  serviceAccountTemplate:
+    metadata:
+      name: provider-github
   # Add resource limits and requests
   # resources:
   #   limits:

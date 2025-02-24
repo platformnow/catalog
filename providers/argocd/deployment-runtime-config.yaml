@@ -6,7 +6,9 @@ metadata:
     app: crossplane
     provider: argocd
 spec:
-  serviceAccountName: provider-argocd
+  serviceAccountTemplate:
+    metadata:
+      name: provider-argocd
   # Add resource limits and requests
   # resources:
   #   limits:

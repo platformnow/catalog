@@ -6,7 +6,9 @@ metadata:
     app: crossplane
     provider: helm
 spec:
-  serviceAccountName: provider-helm
+  serviceAccountTemplate:
+    metadata:
+      name: provider-helm
   # Add resource limits and requests
   # resources:
   #   limits:

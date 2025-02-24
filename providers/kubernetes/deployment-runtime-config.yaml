@@ -6,7 +6,9 @@ metadata:
     app: crossplane
     provider: kubernetes
 spec:
-  serviceAccountName: provider-kubernetes
+  serviceAccountTemplate:
+    metadata:
+      name: provider-kubernetes
   # Add resource limits and requests
   # resources:
   #   limits:
