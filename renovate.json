@@ -3,6 +3,10 @@
   "extends": [
     "config:base"
   ],
+  "enabledManagers": ["regex", "docker"],
+  "platform": "github",
+  "onboarding": false,
+  "requireConfig": "optional",
   "packageRules": [
     {
       "matchManagers": ["regex"],
@@ -47,5 +51,9 @@
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver"
     }
-  ]
+  ],
+  "rangeStrategy": "pin",
+  "dependencyDashboard": true,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0
 } 
