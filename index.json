@@ -63,7 +63,7 @@
       "description": "This provider is a Crossplane Provider that enables deployment and management of Helm Releases on Kubernetes clusters typically provisioned by Crossplane.",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/master/icons/helm.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.20.4",
+      "version": "v0.20.2",
       "source": "https://github.com/crossplane-contrib/provider-helm",
       "cli": true,
       "package": "https://raw.githubusercontent.com/platformnow/catalog/master/providers/helm/provider.yaml"
