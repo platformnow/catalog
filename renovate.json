@@ -3,7 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "enabledManagers": ["regex", "docker"],
+  "enabledManagers": ["regex"],
   "platform": "github",
   "onboarding": false,
   "requireConfig": "optional",
