@@ -1,30 +1,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
-  "enabledManagers": ["regex"],
+  "enabledManagers": [
+    "custom.regex"
+  ],
   "packageRules": [
     {
       "description": "Package updates from platformnow",
-      "matchPackagePatterns": ["^ghcr.io/platformnow/"],
       "groupName": "platformnow packages",
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": [
+        "/^ghcr.io/platformnow//"
+      ]
     },
     {
       "description": "Provider updates",
-      "matchPackagePatterns": [
-        "^registry.upbound.io/crossplane/",
-        "^xpkg.upbound.io/crossplane-contrib/",
-        "^xpkg.upbound.io/coopnorge/"
-      ],
-      "groupName": "crossplane providers"
+      "groupName": "crossplane providers",
+      "matchPackageNames": [
+        "/^registry.upbound.io/crossplane//",
+        "/^xpkg.upbound.io/crossplane-contrib//",
+        "/^xpkg.upbound.io/coopnorge//"
+      ]
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^index\\.json$"],
+      "fileMatch": [
+        "^index\\.json$"
+      ],
       "matchStrings": [
         "\"version\": \"(?<currentValue>.*?)\"",
         "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\""
@@ -34,7 +40,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^packages/.+/package\\.yaml$"],
+      "fileMatch": [
+        "^packages/.+/package\\.yaml$"
+      ],
       "matchStrings": [
         "package: (?<depName>.+):(?<currentValue>.+)"
       ],
@@ -43,7 +51,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^providers/.+/provider\\.yaml$"],
+      "fileMatch": [
+        "^providers/.+/provider\\.yaml$"
+      ],
       "matchStrings": [
         "package: (?<depName>.+):(?<currentValue>.+)"
       ],
@@ -55,4 +65,4 @@
   "dependencyDashboard": true,
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0
-} 
+}
