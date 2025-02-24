@@ -2,9 +2,9 @@ apiVersion: pkg.crossplane.io/v1beta1
 kind: DeploymentRuntimeConfig
 metadata:
   name: provider-helm-config
-  # labels:
-  #   app: crossplane
-  #   provider: helm
+  labels:
+    app: crossplane
+    provider: helm
 spec:
   serviceAccountTemplate:
     metadata:
