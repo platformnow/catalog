@@ -11,17 +11,17 @@
       "description": "Package updates from platformnow",
       "groupName": "platformnow packages",
       "automerge": true,
-      "matchPackageNames": [
-        "/^ghcr.io/platformnow//"
+      "matchPackagePatterns": [
+        "^ghcr\\.io/platformnow/"
       ]
     },
     {
       "description": "Provider updates",
       "groupName": "crossplane providers",
-      "matchPackageNames": [
-        "/^registry.upbound.io/crossplane//",
-        "/^xpkg.upbound.io/crossplane-contrib//",
-        "/^xpkg.upbound.io/coopnorge//"
+      "matchPackagePatterns": [
+        "^registry\\.upbound\\.io/crossplane/",
+        "^xpkg\\.upbound\\.io/crossplane-contrib/",
+        "^xpkg\\.upbound\\.io/coopnorge/"
       ]
     }
   ],
@@ -29,36 +29,18 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^index\\.json$"
-      ],
-      "matchStrings": [
-        "\"version\": \"(?<currentValue>.*?)\"",
-        "\"image\": \"(?<depName>.*?):(?<currentValue>.*?)\""
-      ],
-      "datasourceTemplate": "docker",
-      "extractVersionTemplate": "^v?(?<version>.*)$"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": [
+        "^index\\.json$",
+        "^providers/.+/provider\\.yaml$",
         "^packages/.+/package\\.yaml$"
       ],
       "matchStrings": [
-        "package: (?<depName>.+):(?<currentValue>.+)"
+        "\"image\":\\s*\"(?<depName>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
+        "\"version\":\\s*\"(?<currentValue>[^\"]+)\"[^}]*\"image\":\\s*\"(?<depName>[^\"]+)\"",
+        "package:\\s*(?<depName>[^:]+):(?<currentValue>.+)"
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "semver"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": [
-        "^providers/.+/provider\\.yaml$"
-      ],
-      "matchStrings": [
-        "package: (?<depName>.+):(?<currentValue>.+)"
-      ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "packageNameTemplate": "{{depName}}"
     }
   ],
   "rangeStrategy": "pin",
