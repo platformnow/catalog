@@ -101,5 +101,40 @@
       "source": "https://github.com/crossplane-contrib/provider-argocd",
       "provider": "https://raw.githubusercontent.com/platformnow/catalog/main/providers/argocd/provider.yaml"
     }
+  ],
+  "functions": [
+    {
+      "registry": "xpkg.upbound.io",
+      "image": "upbound/function-auto-ready",
+      "name": "function auto ready",
+      "description": "A composition function that automatically detects when resources are ready",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
+      "maintainer": "Crossplane Maintainers <info@crossplane.io>",
+      "version": "v0.4.2",
+      "source": "https://github.com/crossplane-contrib/function-auto-ready",
+      "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/auto-ready/function.yaml"
+    },
+    {
+      "registry": "xpkg.upbound.io",
+      "image": "upbound/function-patch-and-transform",
+      "name": "function patch and transform",
+      "description": "A patch & transform composition function",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
+      "maintainer": "Crossplane Maintainers <info@crossplane.io>",
+      "version": "v0.8.2",
+      "source": "https://github.com/crossplane-contrib/function-patch-and-transform",
+      "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/patch-and-transform/function.yaml"
+    },
+    {
+      "registry": "xpkg.upbound.io",
+      "image": "upbound/function-go-templating",
+      "name": "function go templating",
+      "description": "A Go templating composition function",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
+      "maintainer": "Crossplane Maintainers <info@crossplane.io>",
+      "version": "v0.8.2",
+      "source": "https://github.com/crossplane-contrib/function-go-templating",
+      "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/go-templating/function.yaml"
+    }
   ]
 }

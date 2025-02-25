@@ -22,7 +22,16 @@
         "/^xpkg\\.upbound\\.io/crossplane-contrib//",
         "/^xpkg\\.upbound\\.io/coopnorge//"
       ]
+    },
+    {
+      "description": "Function updates",
+      "groupName": "crossplane functions",
+      "matchPackageNames": [
+        "/^xpkg\\.upbound\\.io/crossplane-contrib//",
+        "/^xpkg\\.upbound\\.io/upbound//"
+      ]
     }
+
   ],
   "customManagers": [
     {
@@ -30,7 +39,8 @@
       "fileMatch": [
         "^index\\.json$",
         "^providers/.+/provider\\.yaml$",
-        "^packages/.+/package\\.yaml$"
+        "^packages/.+/package\\.yaml$",
+        "^functions/.+/function\\.yaml$"        
       ],
       "matchStrings": [
         "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
