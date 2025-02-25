@@ -132,7 +132,7 @@
       "description": "A Go templating composition function",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.8.2",
+      "version": "v0.9.2",
       "source": "https://github.com/crossplane-contrib/function-go-templating",
       "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/go-templating/function.yaml"
     }
