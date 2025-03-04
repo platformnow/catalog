@@ -16,7 +16,6 @@ spec:
       values: |
         args:
           - --debug
-          - --enable-environment-configs
   syncPolicy:
     automated:
       prune: true
