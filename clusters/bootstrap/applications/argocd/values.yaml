@@ -1,0 +1,6 @@
+argo-cd:
+  configs:
+    cm:
+      url: https://argocd.platformnow.io
+  notifications:
+    argocdUrl: https://argocd.platformnow.io

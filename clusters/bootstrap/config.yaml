@@ -1,0 +1,139 @@
+cluster:
+  name: bootstrap
+  server: https://kubernetes.default.svc
+
+aws:
+  account: ""
+  region: eu-central-1
+
+addons:
+  argocd:
+    type: helm
+    enabled: "true"
+  cert-manager:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: ""
+  aws-load-balancer-controller:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      clusterName: bootstrap
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: ""
+  aws-ebs-csi-driver:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      controller:
+        serviceAccount:
+          annotations:
+            eks.amazonaws.com/role-arn: ""
+  cluster-autoscaler:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      autoDiscovery:
+        clusterName: bootstrap
+      awsRegion: eu-central-1
+      rbac:
+        serviceAccount:
+          annotations:
+            eks.amazonaws.com/role-arn: ""
+  coralogix-otel-integration:
+    type: helm
+    enabled: "true"
+    namespace: coralogix
+    valuesObject:
+      global:
+        clusterName: bootstrap
+  datadog:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      datadog:
+        clusterName: bootstrap
+  external-dns:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: ""
+      sources:
+        - service
+        - ingress
+      domainFilters:
+        - dev.platformnow.io
+      txtOwnerId: dev-eu-central-1-cluster1
+      policy: sync
+  external-secrets:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      serviceAccount:
+        annotations:
+          eks.amazonaws.com/role-arn: ""
+  github-actions-cache-server:
+    type: kustomize
+    enabled: "true"
+    namespace: arc-systems
+  gha-runner-scale-set-controller:
+    type: helm
+    enabled: "true"
+    namespace: arc-systems
+    valuesObject:
+      tolerations:
+        - key: "worker-node-pool"
+          operator: "Equal"
+          value: "true"
+          effect: "NoExecute"
+        - key: "eks.amazonaws.com/nodegroup"
+          operator: "Equal"
+          value: "worker"
+          effect: "NoExecute"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: "eks.amazonaws.com/nodegroup"
+                    operator: In
+                    values:
+                      - "worker"
+  istio-base:
+    type: helm
+    enabled: "true"
+    namespace: istio-system
+  istiod:
+    type: helm
+    enabled: "true"
+    namespace: istio-system
+  istio-ingress:
+    type: helm
+    enabled: "true"
+    namespace: istio-ingress
+    valuesObject:
+      service:
+        annotations:
+          external-dns.alpha.kubernetes.io/hostname: "*.preview.platformnow.io"
+  karpenter:
+    type: helm
+    enabled: "true"
+    valuesObject:
+      annotations:
+        eks.amazonaws.com/role-arn: ""
+      settings:
+        clusterName: bootstrap
+  metrics-server:
+    type: helm
+    enabled: "true"
+    namespace: kube-system
+  opentelemetry-operator:
+    type: helm
+    enabled: "true"
+    namespace: opentelemetry
