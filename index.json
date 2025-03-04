@@ -135,6 +135,17 @@
       "version": "v0.9.2",
       "source": "https://github.com/crossplane-contrib/function-go-templating",
       "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/go-templating/function.yaml"
+    },
+    {
+      "registry": "xpkg.upbound.io",
+      "image": "crossplane-contrib/function-sequencer",
+      "name": "function sequencer",
+      "description": "A composition function enables defining sequencing rules",
+      "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
+      "maintainer": "Crossplane Maintainers <info@crossplane.io>",
+      "version": "v0.2.2",
+      "source": "https://github.com/crossplane-contrib/function-sequencer",
+      "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/sequencer/function.yaml"
     }
   ]
 }
