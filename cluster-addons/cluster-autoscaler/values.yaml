@@ -1,0 +1,9 @@
+cluster-autoscaler:
+  fullnameOverride: cluster-autoscaler
+  autoDiscovery:
+    clusterName: ""
+  awsRegion: eu-central-1
+  rbac:
+    serviceAccount:
+      annotations:
+        eks.amazonaws.com/role-arn: ""

@@ -1,0 +1,7 @@
+istiod:
+  kind: DaemonSet
+  labels:
+    istio: ingressgateway
+  service:
+    type: LoadBalancer
+    externalTrafficPolicy: Local

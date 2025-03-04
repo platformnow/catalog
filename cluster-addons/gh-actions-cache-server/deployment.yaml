@@ -1,0 +1,55 @@
+# https://gha-cache-server.falcondev.io/getting-started/
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cache-server
+  namespace: arc-systems
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: cache-server
+  template:
+    metadata:
+      labels:
+        app: cache-server
+    spec:
+      containers:
+        - name: cache-server
+          image: ghcr.io/falcondev-oss/github-actions-cache-server:4.0.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: URL_ACCESS_TOKEN
+              value: cmFuZG9tX3Rva2Vu
+            - name: API_BASE_URL
+              value: http://cache-server.arc-systems:3000
+            - name: CLEANUP_OLDER_THAN_DAYS
+              value: '14'
+            - name: STORAGE_DRIVER
+              value: s3
+            - name: STORAGE_S3_BUCKET
+              value: gh-actions-cache
+            - name: STORAGE_S3_ACCESS_KEY
+              value: AKIA6ODUZF66AUGQBMNY
+            - name: STORAGE_S3_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: github-cache-server
+                  key: STORAGE_S3_SECRET_KEY
+            - name: STORAGE_S3_ENDPOINT
+              value: s3.amazonaws.com
+            - name: STORAGE_S3_REGION
+              value: eu-central-1
+            - name: STORAGE_S3_PORT
+              value: '443'
+            - name: STORAGE_S3_USE_SSL
+              value: 'true'
+          volumeMounts:
+            - name: cache-data
+              mountPath: /app/.data
+      volumes:
+        - name: cache-data
+          emptyDir: {}

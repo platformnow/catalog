@@ -1,0 +1,10 @@
+external-dns:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: ""
+  sources:
+    - service
+    - ingress
+  domainFilters:
+    - dev.io
+  txtOwnerId: dev-eu-central-1-cluster1

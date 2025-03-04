@@ -1,0 +1,13 @@
+argo-cd:
+  configs:
+    cm:
+      admin.enabled: true
+      accounts.api-access: apiKey
+      kustomize.buildOptions: --enable-helm
+    params:
+      server.insecure: true
+      applicationsetcontroller.namespaces: "*"
+      applicationsetcontroller.allowed.scm.providers: "https://github.com/"
+      application.namespaces: "*"
+  applicationSet:
+    allowAnyNamespace: true
