@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: control-plane
+  namespace: argocd
+spec:
+  description: Control Plane Project for managing Cluster resources
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  roles:
+    - name: admin
+      description: Admin role for control plane project
+      policies:
+        - p, proj:control-plane:admin, applications, *, *, allow
+      groups:
+        - mohammadsrahman@me.com
