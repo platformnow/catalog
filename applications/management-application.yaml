@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: management-applications
+  namespace: argocd
+spec:
+  project: control-plane
+  sources:
+    - repoURL: https://github.com/platformnow/catalog.git
+      targetRevision: main
+      path: clusters/bootstrap/applications
+    - repoURL: https://github.com/platformnow/catalog.git
+      targetRevision: main
+      path: clusters/bootstrap/projects
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

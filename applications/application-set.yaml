@@ -1,0 +1,75 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-addons
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+    - matrix:
+        generators:
+          - matrix:
+              generators:
+                - git:
+                    repoURL: https://github.com/platformnnow/catalog.git
+                    revision: main
+                    files:
+                      - path: "clusters/bootstrap/config.yaml"
+                    pathParamPrefix: config
+                - git:
+                    repoURL: https://github.com/platformnnow/catalog.git
+                    revision: main
+                    directories:
+                      - path: cluster-addons/*
+                    pathParamPrefix: addon
+          - list:
+              elements:
+                - addonEnabled: '{{ $name := .addon.path.basename }}{{ if hasKey .addons $name }}{{ if eq (index .addons $name).enabled "true" }}true{{ else }}false{{ end }}{{ end }}'
+      selector:
+        matchLabels:
+          addonEnabled: "true"
+  template:
+    metadata:
+      name: '{{ .addon.path.basename }}'
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
+      annotations:
+        debug-context: '{{ toJson . }}'
+      labels:
+        addonEnabled: '{{ .addonEnabled }}'
+    spec:
+      project: control-plane
+      source:
+        repoURL: https://github.com/platformnnow/catalog.git
+        targetRevision: main
+        path: '{{ .addon.path.path }}'
+      destination:
+        server: '{{ .cluster.server }}'
+        namespace: '{{ $name := .addon.path.basename }}{{ if and .addons (index .addons $name) }}{{ if hasKey (index .addons $name) "namespace" }}{{ (index .addons $name).namespace }}{{ else }}{{ $name }}{{ end }}{{ else }}{{ $name }}{{ end }}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+  templatePatch: |
+    {{- $addon := .addon.path.basename }}
+    {{- $config := .config }}
+    {{- if and .addons (index .addons $addon) }}
+    {{- $addonConfig := index .addons $addon }}
+    {{- if eq $addonConfig.type "helm" }}
+    spec:
+      source:
+        helm:
+          valueFiles:
+            - values.yaml
+            - ../../{{ $config.path.path }}/applications/{{ $addon }}/values.yaml
+          ignoreMissingValueFiles: true
+          {{- if hasKey $addonConfig "valuesObject" }}
+          valuesObject:
+            {{ $addon }}:
+            {{ $addonConfig.valuesObject | toYaml | nindent 14 }}
+          {{- end }}
+    {{- end }}
+    {{- end }}
