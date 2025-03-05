@@ -57,10 +57,6 @@
   "helm-requirements": {
     "fileMatch": [
       "cluster-addons/.+/Chart\\.yaml$"
-    ],
-    "matchStrings": [
-      "version:\\s*(?<currentValue>[^\\s]+)\\s*\\n",
-      "dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
     ]
   },
   "customManagers": [
@@ -92,6 +88,21 @@
       "versioningTemplate": "semver",
       "packageNameTemplate": "{{registry}}/{{image}}",
       "depNameTemplate": "{{registry}}/{{image}}"
+    },
+    {
+      "customType": "regex",
+      "description": "Helm chart version updates in Chart.yaml",
+      "fileMatch": [
+        "cluster-addons/.+/Chart\\.yaml$"
+      ],
+      "matchStrings": [
+        "version:\\s*(?<currentValue>[^\\s]+)\\s*\\n",
+        "dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
+      ],
+      "datasourceTemplate": "helm",
+      "versioningTemplate": "semver",
+      "packageNameTemplate": "{{registry}}/{{depName}}",
+      "depNameTemplate": "{{registry}}/{{depName}}"
     }
   ],
   "separateMajorMinor": true,
