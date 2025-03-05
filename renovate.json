@@ -66,19 +66,30 @@
         "^providers/.+/provider\\.yaml$",
         "^packages/.+/package\\.yaml$",
         "^functions/.+/function\\.yaml$",       
-        "cluster-addons/.+/values\\.yaml$",
-        "cluster-addons/.+/Chart\\.yaml$"
+        "cluster-addons/.+/values\\.yaml$"
       ],
       "matchStrings": [
         "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
         "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)",
-        "image:\\s+(?<depName>.*?):(?<currentValue>.*?)\\s",
-        "version:\\s*(?<currentValue>[^\\s]+)"
+        "image:\\s+(?<depName>.*?):(?<currentValue>.*?)\\s"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver",
       "packageNameTemplate": "{{registry}}/{{image}}",
       "depNameTemplate": "{{registry}}/{{image}}"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "(^|/)Chart\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
+      ],
+      "datasourceTemplate": "helm",
+      "versioningTemplate": "semver",
+      "packageNameTemplate": "{{registry}}/{{depName}}",
+      "depNameTemplate": "{{registry}}/{{depName}}"
     }
   ],
   "rangeStrategy": "pin",
