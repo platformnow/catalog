@@ -1,29 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":dependencyDashboard"
   ],
-  "enabledManagers": [
-    "custom.regex",
-    "npm",
-    "kubernetes"
-  ],
- 
-  "registryAliases": {
-    "argoproj": "https://argoproj.github.io/argo-helm",
-    "aws-ebs-csi-driver": "https://kubernetes-sigs.github.io/aws-ebs-csi-driver",
-    "aws-load-balancer-controller": "https://aws.github.io/eks-charts",
-    "cert-manager": "https://charts.jetstack.io",
-    "cluster-autoscaler": "https://kubernetes.github.io/autoscaler",
-    "crossplane": "https://charts.crossplane.io/stable",
-    "external-dns": "https://kubernetes-sigs.github.io/external-dns",
-    "external-secrets": "https://charts.external-secrets.io",
-    "gha-runner-scale-set-controller": "ghcr.io/actions/actions-runner-controller-charts",
-    "istio": "https://istio-release.storage.googleapis.com/charts",
-    "karpenter": "public.ecr.aws/karpenter",
-    "metrics-server": "https://kubernetes-sigs.github.io/metrics-server",
-    "opentelemetry": "https://open-telemetry.github.io/opentelemetry-helm-charts"
-  },
   "packageRules": [
     {
       "matchDatasources": [
@@ -39,30 +19,6 @@
       "commitMessageTopic": "Docker image {{depName}}",
       "separateMinorPatch": true,
       "enabled": true
-    },
-    {
-      "description": "Package updates from platformnow",
-      "groupName": "platformnow packages",
-      "automerge": true,
-      "matchPackageNames": [
-        "/^ghcr\\.io/platformnow//"
-      ]
-    },
-    {
-      "description": "Provider updates",
-      "groupName": "crossplane providers",
-      "matchPackageNames": [
-        "/^xpkg\\.upbound\\.io/crossplane-contrib//",
-        "/^xpkg\\.upbound\\.io/coopnorge//"
-      ]
-    },
-    {
-      "description": "Function updates",
-      "groupName": "crossplane functions",
-      "matchPackageNames": [
-        "/^xpkg\\.upbound\\.io/crossplane-contrib//",
-        "/^xpkg\\.upbound\\.io/upbound//"
-      ]
     }
   ],
   "kubernetes": {
@@ -74,41 +30,23 @@
       "clusters/.+/applications/.+/values-.*\\.yaml$"
     ]
   },
+  "helm-requirements": {
+    "fileMatch": [
+      "cluster-addons/.+/Chart\\.yaml$"
+    ]
+  },
   "customManagers": [
     {
       "customType": "regex",
       "fileMatch": [
-        "^index\\.json$",
-        "^providers/.+/provider\\.yaml$",
-        "^packages/.+/package\\.yaml$",
-        "^functions/.+/function\\.yaml$",       
         "cluster-addons/.+/values\\.yaml$"
       ],
       "matchStrings": [
-        "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
-        "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)",
         "image:\\s+(?<depName>.*?):(?<currentValue>.*?)\\s"
       ],
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "semver",
-      "packageNameTemplate": "{{registry}}/{{image}}",
-      "depNameTemplate": "{{registry}}/{{image}}"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": [
-        "(^|/)Chart\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
-      ],
-      "datasourceTemplate": "helm",
-      "versioningTemplate": "semver",
-      "packageNameTemplate": "{{registry}}/{{depName}}",
-      "depNameTemplate": "{{registry}}/{{depName}}"
+      "datasourceTemplate": "docker"
     }
   ],
-  "rangeStrategy": "pin",
   "separateMajorMinor": true,
   "separateMinorPatch": true,
   "prHourlyLimit": 4,
