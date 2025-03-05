@@ -7,6 +7,9 @@ aws:
   region: eu-central-1
 
 addons:
+  crossplane:
+    type: helm
+    enabled: "true"
   argocd:
     type: helm
     enabled: "true"
