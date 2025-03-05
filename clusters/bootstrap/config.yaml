@@ -10,6 +10,7 @@ addons:
   crossplane:
     type: helm
     enabled: "true"
+    namespace: crossplane-system
   argocd:
     type: helm
     enabled: "true"
