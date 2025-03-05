@@ -5,10 +5,7 @@
   ],
   "enabledManagers": [
     "custom.regex",
-    "helm",
-    "docker",
     "npm",
-    "pip",
     "kubernetes"
   ],
   "packageRules": [
@@ -61,11 +58,6 @@
       "clusters/.+/applications/.+/values-.*\\.yaml$"
     ]
   },
-  "helm-requirements": {
-    "fileMatch": [
-      "cluster-addons/.+/Chart\\.yaml$"
-    ]
-  },
   "customManagers": [
     {
       "customType": "regex",
@@ -74,12 +66,14 @@
         "^providers/.+/provider\\.yaml$",
         "^packages/.+/package\\.yaml$",
         "^functions/.+/function\\.yaml$",       
-        "cluster-addons/.+/values\\.yaml$" 
+        "cluster-addons/.+/values\\.yaml$",
+        "cluster-addons/.+/Chart\\.yaml$"
       ],
       "matchStrings": [
         "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
         "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)",
-         "image:\\s+(?<depName>.*?):(?<currentValue>.*?)\\s"
+        "image:\\s+(?<depName>.*?):(?<currentValue>.*?)\\s",
+        "version:\\s*(?<currentValue>[^\\s]+)"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver",
