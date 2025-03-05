@@ -12,13 +12,13 @@ spec:
           - matrix:
               generators:
                 - git:
-                    repoURL: https://github.com/platformnnow/catalog.git
+                    repoURL: https://github.com/platformnow/catalog.git
                     revision: main
                     files:
                       - path: "clusters/bootstrap/config.yaml"
                     pathParamPrefix: config
                 - git:
-                    repoURL: https://github.com/platformnnow/catalog.git
+                    repoURL: https://github.com/platformnow/catalog.git
                     revision: main
                     directories:
                       - path: cluster-addons/*
@@ -41,7 +41,7 @@ spec:
     spec:
       project: control-plane
       source:
-        repoURL: https://github.com/platformnnow/catalog.git
+        repoURL: https://github.com/platformnow/catalog.git
         targetRevision: main
         path: '{{ .addon.path.path }}'
       destination:
