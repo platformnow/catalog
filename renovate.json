@@ -19,6 +19,30 @@
       "commitMessageTopic": "Docker image {{depName}}",
       "separateMinorPatch": true,
       "enabled": true
+    },
+    {
+      "description": "Package updates from platformnow",
+      "groupName": "platformnow packages",
+      "automerge": true,
+      "matchPackageNames": [
+        "/^ghcr\\.io/platformnow//"
+      ]
+    },
+    {
+      "description": "Provider updates",
+      "groupName": "crossplane providers",
+      "matchPackageNames": [
+        "/^xpkg\\.upbound\\.io/crossplane-contrib//",
+        "/^xpkg\\.upbound\\.io/coopnorge//"
+      ]
+    },
+    {
+      "description": "Function updates",
+      "groupName": "crossplane functions",
+      "matchPackageNames": [
+        "/^xpkg\\.upbound\\.io/crossplane-contrib//",
+        "/^xpkg\\.upbound\\.io/upbound//"
+      ]
     }
   ],
   "kubernetes": {
@@ -45,6 +69,23 @@
         "image:\\s+(?<depName>.*?):(?<currentValue>.*?)\\s"
       ],
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^index\\.json$",
+        "^providers/.+/provider\\.yaml$",
+        "^packages/.+/package\\.yaml$",
+        "^functions/.+/function\\.yaml$",
+      ],
+      "matchStrings": [
+        "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
+        "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)",
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "semver",
+      "packageNameTemplate": "{{registry}}/{{image}}",
+      "depNameTemplate": "{{registry}}/{{image}}"
     }
   ],
   "separateMajorMinor": true,
