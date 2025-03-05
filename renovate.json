@@ -4,7 +4,12 @@
     "config:recommended"
   ],
   "enabledManagers": [
-    "custom.regex"
+    "custom.regex",
+    "helm",
+    "docker",
+    "npm",
+    "pip",
+    "kubernetes"
   ],
   "packageRules": [
     {
