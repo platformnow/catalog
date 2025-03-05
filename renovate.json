@@ -8,6 +8,23 @@
     "npm",
     "kubernetes"
   ],
+  "helm": {
+    "registryAliases": {
+      "argoproj": "https://argoproj.github.io/argo-helm",
+      "aws-ebs-csi-driver": "https://kubernetes-sigs.github.io/aws-ebs-csi-driver",
+      "aws-load-balancer-controller": "https://aws.github.io/eks-charts",
+      "cert-manager": "https://charts.jetstack.io",
+      "cluster-autoscaler": "https://kubernetes.github.io/autoscaler",
+      "crossplane": "https://charts.crossplane.io/stable",
+      "external-dns": "https://kubernetes-sigs.github.io/external-dns",
+      "external-secrets": "https://charts.external-secrets.io",
+      "gha-runner-scale-set-controller": "ghcr.io/actions/actions-runner-controller-charts",
+      "istio": "https://istio-release.storage.googleapis.com/charts",
+      "karpenter": "public.ecr.aws/karpenter",
+      "metrics-server": "https://kubernetes-sigs.github.io/metrics-server",
+      "opentelemetry": "https://open-telemetry.github.io/opentelemetry-helm-charts"
+    }
+  },
   "packageRules": [
     {
       "matchDatasources": [
