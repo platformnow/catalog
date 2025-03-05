@@ -63,6 +63,7 @@
     {
       "customType": "regex",
       "description": "Docker image updates in values.yaml",
+      "groupName": "Kubernetes Values Docker Images",
       "fileMatch": [
         "cluster-addons/.+/values\\.yaml$"
       ],
@@ -74,6 +75,7 @@
     {
       "customType": "regex",
       "description": "Docker image updates in provider.yaml, package.yaml, and function.yaml files and index.json",
+      "groupName": "Crossplane Docker Images",
       "fileMatch": [
         "^index\\.json$",
         "^providers/.+/provider\\.yaml$",
@@ -92,6 +94,7 @@
     {
       "customType": "regex",
       "description": "Helm chart version updates in Chart.yaml",
+      "groupName": "Helm Chart Versions",
       "fileMatch": [
         "cluster-addons/.+/Chart\\.yaml$"
       ],
