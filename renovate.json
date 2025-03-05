@@ -62,6 +62,7 @@
   "customManagers": [
     {
       "customType": "regex",
+      "description": "Docker image updates in values.yaml",
       "fileMatch": [
         "cluster-addons/.+/values\\.yaml$"
       ],
@@ -72,15 +73,16 @@
     },
     {
       "customType": "regex",
+      "description": "Docker image updates in provider.yaml, package.yaml, and function.yaml files and index.json",
       "fileMatch": [
         "^index\\.json$",
         "^providers/.+/provider\\.yaml$",
         "^packages/.+/package\\.yaml$",
-        "^functions/.+/function\\.yaml$",
+        "^functions/.+/function\\.yaml$"
       ],
       "matchStrings": [
         "\"registry\":\\s*\"(?<registry>[^\"]+)\"[^}]*\"image\":\\s*\"(?<image>[^\"]+)\"[^}]*\"version\":\\s*\"(?<currentValue>[^\"]+)\"",
-        "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)",
+        "package:\\s*(?<registry>[^/]+)/(?<image>[^:]+):(?<currentValue>.+)"
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "semver",
