@@ -57,6 +57,10 @@
   "helm-requirements": {
     "fileMatch": [
       "cluster-addons/.+/Chart\\.yaml$"
+    ],
+    "matchStrings": [
+      "version:\\s*(?<currentValue>[^\\s]+)\\s*\\n",
+      "dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
     ]
   },
   "customManagers": [
