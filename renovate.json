@@ -96,8 +96,8 @@
         "cluster-addons/.+/Chart\\.yaml$"
       ],
       "matchStrings": [
-        "#\\s*renovate: chart=(?<depName>[^\\s]+)\\s+version:\\s*(?<currentValue>[^\\s]+)\\s*\\n",
-        "#\\s*renovate: chart=(?<depName>[^\\s]+)\\s+dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
+        "#\\s*renovate: chart=(?<chartName>[^\\s]+)\\s+version:\\s*(?<currentValue>[^\\s]+)\\s*\\n",
+        "#\\s*renovate: chart=(?<chartName>[^\\s]+)\\s+dependencies:\\s*\\n\\s*-\\s*name:\\s*(?<depName>[^\\s]+)\\s*\\n\\s*version:\\s*(?<currentValue>[^\\s]+)\\s*\\n\\s*repository:\\s*(?<registry>[^\\s]+)"
       ],
       "datasourceTemplate": "helm",
       "versioningTemplate": "semver",
