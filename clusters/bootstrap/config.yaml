@@ -36,3 +36,7 @@ addons:
     type: helm
     enabled: "true"
     namespace: istio-ingress
+  localstack:
+    type: helm
+    enabled: "true"
+    namespace: localstack
