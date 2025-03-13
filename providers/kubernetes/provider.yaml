@@ -6,7 +6,7 @@ metadata:
     app: crossplane
     provider: kubernetes
 spec:
-  package: xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.17.0
+  package: xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.17.1
   packagePullPolicy: IfNotPresent
   runtimeConfigRef:
     name: provider-kubernetes-config
