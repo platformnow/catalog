@@ -143,7 +143,7 @@
       "description": "A composition function enables defining sequencing rules",
       "icon": "https://raw.githubusercontent.com/platformnow/catalog/main/icons/package.svg",
       "maintainer": "Crossplane Maintainers <info@crossplane.io>",
-      "version": "v0.2.2",
+      "version": "v0.2.3",
       "source": "https://github.com/crossplane-contrib/function-sequencer",
       "function": "https://raw.githubusercontent.com/platformnow/catalog/main/functions/sequencer/function.yaml"
     }
