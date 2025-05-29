@@ -3,4 +3,4 @@ kind: Function
 metadata:
   name: function-sequencer
 spec:
-  package: xpkg.upbound.io/crossplane-contrib/function-sequencer:v0.2.2
+  package: xpkg.upbound.io/crossplane-contrib/function-sequencer:v0.2.3
